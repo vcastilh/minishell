@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: coder <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: guribeir <guribeir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/28 17:34:14 by coder             #+#    #+#             */
-/*   Updated: 2022/10/03 19:42:44 by coder            ###   ########.fr       */
+/*   Updated: 2022/10/04 00:12:59 by guribeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minishell.h"
+// #include "minishell.h"
 
-int	main(void)
-{
-	return (0);
-}
+// int	main(void)
+// {
+// 	return (0);
+// }
