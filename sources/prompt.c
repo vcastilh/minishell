@@ -1,15 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minishell.h                                        :+:      :+:    :+:   */
+/*   prompt.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: coder <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: guribeir <guribeir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/28 18:16:49 by coder             #+#    #+#             */
-/*   Updated: 2022/10/03 20:02:42 by coder            ###   ########.fr       */
+/*   Created: 2022/10/03 23:09:36 by guribeir          #+#    #+#             */
+/*   Updated: 2022/10/04 00:25:07 by guribeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MINISHELL_H
-# define MINISHELL_H
-#endif
+#include "minishell.h"
+
+int	main(void)
+{
+	char	*ptr;
+
+	ptr = readline("coder@guribeir-workspace-d94d6476c-qfs67:~/mini");
+	printf("The line you've written is: %s\n", ptr);
+	free(ptr);
+	return(0);
+}
