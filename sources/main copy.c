@@ -5,14 +5,18 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: guribeir <guribeir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/28 17:34:14 by coder             #+#    #+#             */
-/*   Updated: 2022/10/04 00:12:59 by guribeir         ###   ########.fr       */
+/*   Created: 2022/10/05 16:19:44 by guribeir          #+#    #+#             */
+/*   Updated: 2022/10/05 16:38:06 by guribeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include "minishell.h"
+#include "minishell.h"
 
-// int	main(void)
-// {
-// 	return (0);
-// }
+int	main(void)
+{
+	char	**strs;
+
+	strs = ft_split("-n Só bora -n lá então", ' ');
+	echo(strs);
+	return (0);
+}
