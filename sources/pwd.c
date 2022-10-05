@@ -1,39 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   pwd.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: guribeir <guribeir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/05 16:19:44 by guribeir          #+#    #+#             */
-/*   Updated: 2022/10/05 18:18:21 by guribeir         ###   ########.fr       */
+/*   Created: 2022/10/05 17:55:38 by guribeir          #+#    #+#             */
+/*   Updated: 2022/10/05 18:29:21 by guribeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
 
-int	main(void)
+int	pwd(void)
 {
-	//char	**strs;
+	char	*str;
 
-	//empty string:
-	//strs = ft_split("", ' ');;
-	
-	//null string:
-	//strs = NULL;
-	
-	//-n starting the string
-	//strs = ft_split("echo -n Só bora -n lá então", ' ');
-
-	//-n in the middle of the string
-	//strs = ft_split("echo Só bora -n lá então", ' ');
-	
-	//-n in the middle of the string
-	//strs = ft_split("echo 'a'", ' ');
-
-	//echo(strs);
-	//strsclear(strs);
-
-	pwd();
+	str = NULL;
+	str = getcwd(str, 4096);
+	ft_putendl_fd(str, 1);
 	return (0);
 }
