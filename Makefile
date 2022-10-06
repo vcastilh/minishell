@@ -6,13 +6,13 @@
 #    By: guribeir <guribeir@student.42.rio>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/03 19:44:22 by coder             #+#    #+#              #
-#    Updated: 2022/10/05 18:19:17 by guribeir         ###   ########.fr        #
+#    Updated: 2022/10/06 22:19:56 by coder            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror -g
-SRCS = main.c echo.c clear.c pwd.c
+SRCS = main.c 
 OBJS = ${SRCS:%.c=$(PATH_OBJS)%.o}	
 LIBS = libft.a
 PATH_SRCS = ./sources/

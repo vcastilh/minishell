@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: coder <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: guribeir <guribeir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/06 22:13:00 by coder             #+#    #+#             */
-/*   Updated: 2022/10/06 22:17:56 by coder            ###   ########.fr       */
+/*   Created: 2022/10/05 16:19:44 by guribeir          #+#    #+#             */
+/*   Updated: 2022/10/05 18:18:21 by guribeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,26 @@
 
 int	main(void)
 {
-	char	*prompt;
+	//char	**strs;
 
-	while (1)
-	{
-		prompt = readline("minishell$");
-		if (!prompt)
-			break;
-	}
-	free(prompt);
+	//empty string:
+	//strs = ft_split("", ' ');;
+	
+	//null string:
+	//strs = NULL;
+	
+	//-n starting the string
+	//strs = ft_split("echo -n Só bora -n lá então", ' ');
+
+	//-n in the middle of the string
+	//strs = ft_split("echo Só bora -n lá então", ' ');
+	
+	//-n in the middle of the string
+	//strs = ft_split("echo 'a'", ' ');
+
+	//echo(strs);
+	//strsclear(strs);
+
+	pwd();
 	return (0);
 }

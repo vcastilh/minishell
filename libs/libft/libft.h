@@ -6,7 +6,7 @@
 /*   By: vcastilh <vcastilh@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/23 08:47:36 by vcastilh          #+#    #+#             */
-/*   Updated: 2022/07/20 03:25:30 by coder            ###   ########.fr       */
+/*   Updated: 2022/10/06 03:41:43 by coder            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@
 
 typedef struct s_list
 {
+	char			*name;
 	void			*content;
 	struct s_list	*next;
 }	t_list;
