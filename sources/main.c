@@ -6,7 +6,7 @@
 /*   By: guribeir <guribeir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 22:13:00 by coder             #+#    #+#             */
-/*   Updated: 2022/10/07 15:38:24 by guribeir         ###   ########.fr       */
+/*   Updated: 2022/10/07 16:47:10 by guribeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ int	main(void)
 	while (1)
 	{
 		prompt = set_prompt("minishell$");
+		free(prompt);
 		if (!prompt)
 		{
 			free(prompt);
