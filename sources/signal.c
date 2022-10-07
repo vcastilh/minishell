@@ -1,32 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   signal.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: coder <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/06 22:13:00 by coder             #+#    #+#             */
-/*   Updated: 2022/10/07 16:49:13 by coder            ###   ########.fr       */
+/*   Created: 2022/10/07 14:57:34 by coder             #+#    #+#             */
+/*   Updated: 2022/10/07 16:59:50 by coder            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
 
-int	main(void)
+void	sig_handler(int	sig)
 {
-	char	*prompt;
-	struct sigaction	act;
-
-	set_signals(&act);
-	while (1)
+	if (sig == SIGINT)
 	{
-		prompt = set_prompt("minishell$");
-		//if (prompt == NULL)
-		//{
-		//	ft_putchar_fd('\n', 1);
-		//	return (1);
-		//}	
+		ft_putchar_fd('\n', 1);
+		rl_reset_line_state();
+		rl_redisplay();
 	}
-	free(prompt);
-	return (0);
+}
+
+void	set_signals(struct sigaction *act)
+{
+	act->sa_handler = &sig_handler;
+	sigaction(SIGINT, act, NULL);
 }
