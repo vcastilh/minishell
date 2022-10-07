@@ -6,7 +6,7 @@
 /*   By: guribeir <guribeir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/28 18:16:49 by coder             #+#    #+#             */
-/*   Updated: 2022/10/05 18:18:42 by guribeir         ###   ########.fr       */
+/*   Updated: 2022/10/07 14:49:12 by coder            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@
 int		echo(char **str);
 void	strclear(char **str);
 void	strsclear(char **ptrs);
-int	pwd(void);
+int		pwd(void);
+char	*set_prompt(const char *name);
 
 #endif
