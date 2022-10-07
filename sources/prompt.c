@@ -6,7 +6,7 @@
 /*   By: coder <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 14:35:19 by coder             #+#    #+#             */
-/*   Updated: 2022/10/07 14:55:22 by coder            ###   ########.fr       */
+/*   Updated: 2022/10/07 15:09:05 by coder            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*set_prompt(const char *name)
 	char	*line;
 
 	line = readline(name);
-	if (!line)
+	if (!line || !*line)
 		return (NULL);
 	add_history(line);
 	return (line);
