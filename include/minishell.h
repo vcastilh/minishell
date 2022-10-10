@@ -6,7 +6,7 @@
 /*   By: guribeir <guribeir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/28 18:16:49 by coder             #+#    #+#             */
-/*   Updated: 2022/10/07 15:55:11 by coder            ###   ########.fr       */
+/*   Updated: 2022/10/10 20:36:41 by coder            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,6 @@ void	strsclear(char **ptrs);
 int		pwd(void);
 char	*set_prompt(const char *name);
 void	set_signals(struct sigaction *act);
+void	set_env(char *envp[]);
 
 #endif

@@ -6,7 +6,7 @@
 #    By: vcastilh <vcastilh@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/18 10:20:32 by vcastilh          #+#    #+#              #
-#    Updated: 2022/07/20 03:25:59 by coder            ###   ########.fr        #
+#    Updated: 2022/10/10 20:43:07 by coder            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,25 +50,15 @@ FILES = ft_isalpha.c \
 		ft_get_next_line.c \
 		ft_atold.c \
 		ft_getenv.c \
-
-BONUSFILES = ft_lstnew.c \
-			 ft_lstadd_front.c \
-			 ft_lstsize.c \
-			 ft_lstlast.c \
-			 ft_lstadd_back.c \
-			 ft_lstdelone.c \
-			 ft_lstclear.c \
-			 ft_lstiter.c \
+		ft_lstnew.c \
+		ft_lstsize.c \
+		ft_lstlast.c \
+		ft_lstadd_back.c \
 
 
 OBJFILES = $(FILES:%.c=%.o)
-OBJBONUSFILES = $(BONUSFILES:%.c=%.o)
 
 all: $(NAME)
-
-#Está com relink
-bonus: all $(OBJBONUSFILES)
-	ar rcs $(NAME) $(OBJBONUSFILES)
 
 $(NAME): $(OBJFILES)
 	ar rcs $@ $^

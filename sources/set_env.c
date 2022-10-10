@@ -1,25 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   set_env.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: coder <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/15 14:28:57 by coder             #+#    #+#             */
-/*   Updated: 2022/10/10 20:31:11 by coder            ###   ########.fr       */
+/*   Created: 2022/10/10 20:32:32 by coder             #+#    #+#             */
+/*   Updated: 2022/10/10 20:47:01 by coder            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "minishell.h"
 
-t_list	*ft_lstnew(void *content)
+void	set_env(char *envp[])
 {
-	t_list	*lst;
-
-	lst = malloc(sizeof(t_list));
-	if (lst == NULL)
-		return (NULL);
-	lst->var = content;
-	lst->next = NULL;
-	return (lst);
+	int		i;
+	t_list	*env;
+	
+	i = 0;
+	env = ft_lstnew(envp[i++]);
+	while (envp[i] != NULL)
+		ft_lstadd_back(&env, ft_lstnew(envp[i++]));
+	while(env)
+	{
+		printf("%s\n", env->var);
+		env = env->next;
+	}
 }
