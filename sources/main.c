@@ -6,7 +6,7 @@
 /*   By: guribeir <guribeir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 22:13:00 by coder             #+#    #+#             */
-/*   Updated: 2022/10/10 20:39:13 by coder            ###   ########.fr       */
+/*   Updated: 2022/10/10 23:45:47 by guribeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,14 @@
 
 int	main(int argc, char *argv[], char *envp[])
 {
-	char	*prompt;
+	char				*prompt;
 	struct sigaction	act;
+	t_list				*env;
 
 	if (argc == 0 || !argv[0])
 		return (1);
 	set_signals(&act);
-	set_env(envp);
+	env = set_env(envp);
 	while (1)
 	{
 		prompt = set_prompt("minishell$");
