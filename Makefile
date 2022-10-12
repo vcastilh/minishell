@@ -6,13 +6,13 @@
 #    By: guribeir <guribeir@student.42.rio>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/03 19:44:22 by coder             #+#    #+#              #
-#    Updated: 2022/10/10 20:39:54 by coder            ###   ########.fr        #
+#    Updated: 2022/10/12 22:59:54 by coder            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror -g
-SRCS = main.c prompt.c signal.c set_env.c
+SRCS = prompt.c signal.c set_env.c tests.c
 OBJS = ${SRCS:%.c=$(PATH_OBJS)%.o}	
 LIBS = libft.a
 PATH_SRCS = ./sources/
@@ -24,7 +24,7 @@ NAME = minishell
 all: $(NAME)
 
 $(NAME): $(OBJS) $(LIBS)
-	$(CC) $(CFLAGS) -I ./include/ $(OBJS) $(PATH_LIBS)/$(LIBS) -lreadline -o $(NAME)
+	$(CC) $(CFLAGS) -I ./include/ $(OBJS) $(PATH_LIBS)/$(LIBS) -lrt -lm -lreadline -o $(NAME)
 
 $(PATH_OBJS)%.o: $(PATH_SRCS)%.c
 	mkdir -p $(PATH_OBJS)
