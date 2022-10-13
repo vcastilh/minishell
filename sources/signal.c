@@ -6,7 +6,7 @@
 /*   By: guribeir <guribeir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 14:57:34 by coder             #+#    #+#             */
-/*   Updated: 2022/10/07 17:32:56 by guribeir         ###   ########.fr       */
+/*   Updated: 2022/10/13 19:24:40 by coder            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,11 @@ void	sig_handler(int	sig)
 	}
 }
 
-void	set_signals(struct sigaction *act)
+void	set_signals(struct sigaction *act, struct sigaction *act_2)
 {
 	act->sa_handler = &sig_handler;
-	signal(SIGQUIT, SIG_IGN);
-	signal(SIGTSTP, SIG_IGN);
 	sigaction(SIGINT, act, NULL);
+	act_2->sa_handler = SIG_IGN;
+	sigaction(SIGQUIT, act_2, NULL);
+	sigaction(SIGTSTP, act_2, NULL);
 }
