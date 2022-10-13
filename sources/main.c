@@ -6,7 +6,7 @@
 /*   By: guribeir <guribeir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 22:13:00 by coder             #+#    #+#             */
-/*   Updated: 2022/10/13 19:50:47 by vcastilh         ###   ########.fr       */
+/*   Updated: 2022/10/13 20:07:00 by coder            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	main(int argc, char *argv[], char *envp[])
 
 	if (argc == 0 || !argv[0])
 		return (1);
-	set_signals(&acti, &act_2);
+	set_signals(&act, &act_2);
 	env = set_env(envp);
 	while (1)
 	{
