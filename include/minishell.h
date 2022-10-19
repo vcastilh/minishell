@@ -6,7 +6,7 @@
 /*   By: guribeir <guribeir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/28 18:16:49 by coder             #+#    #+#             */
-/*   Updated: 2022/10/13 19:18:08 by coder            ###   ########.fr       */
+/*   Updated: 2022/10/18 22:00:18 by coder            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
 #include <unistd.h>
 #include <signal.h>
 #include "../libs/libft/libft.h"
+#include <stdarg.h>
 
 int		echo(char **str);
 void	strclear(char **str);
@@ -29,5 +30,6 @@ int		pwd(void);
 char	*set_prompt(const char *name);
 void	set_signals(struct sigaction *act, struct sigaction *act_2);
 t_list	*set_env(char *envp[]);
+int		builtin_env(t_list *env);
 
 #endif

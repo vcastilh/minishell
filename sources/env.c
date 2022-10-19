@@ -1,22 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
+/*   env.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: coder <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/18 19:57:01 by coder             #+#    #+#             */
-/*   Updated: 2022/10/18 23:19:40 by coder            ###   ########.fr       */
+/*   Created: 2022/10/18 14:25:43 by coder             #+#    #+#             */
+/*   Updated: 2022/10/18 22:37:08 by coder            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "minishell.h"
 
-void	ft_lstdelone(t_list *lst, void (*del)(void *))
+t_list	*set_env(char *envp[])
 {
-	if (lst && del)
+	int		i;
+	t_list	*env;
+	
+	i = 0;
+	env = ft_lstnew(envp[i++]);
+	while (envp[i] != NULL)
+		ft_lstadd_back(&env, ft_lstnew(envp[i++]));
+	return (env);
+}
+
+int	builtin_env(t_list *env)
+{
+	t_list	*tmp;
+
+	tmp = env;
+	while (tmp != NULL)
 	{
-		del(lst->var);
-		free(lst);
+		ft_putendl_fd(tmp->var, 1);
+		tmp = tmp->next;
 	}
+	return (0);
 }
