@@ -1,23 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
+/*   env_utils.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: guribeir <guribeir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/18 19:57:01 by coder             #+#    #+#             */
-/*   Updated: 2022/10/20 21:35:20 by guribeir         ###   ########.fr       */
+/*   Created: 2022/10/20 16:29:35 by guribeir          #+#    #+#             */
+/*   Updated: 2022/10/20 20:57:37 by guribeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "minishell.h"
 
-void	ft_lstdelone(t_list *lst, void (*del)(void *))
+t_list	*change_env(t_list *env, char *key, char *value)
 {
-	if (lst && del)
+	t_list	*tmp;
+	int		len;
+
+	len = ft_strlen(key);
+	tmp = env;
+	while(tmp)
 	{
-		del(lst->key);
-		del(lst->value);
-		free(lst);
+		if (ft_strncmp(key, tmp->key, len) == 0)
+			{
+				free(tmp->value);
+				tmp->value = NULL;
+				tmp->value = ft_strdup(value);
+			}
+		tmp = tmp->next;
 	}
+	return(env);
 }

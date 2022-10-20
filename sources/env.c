@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   env.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: coder <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: guribeir <guribeir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 14:25:43 by coder             #+#    #+#             */
-/*   Updated: 2022/10/19 14:49:05 by vcastilh         ###   ########.fr       */
+/*   Updated: 2022/10/20 21:34:40 by guribeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,9 @@ int	builtin_env(t_list *env)
 	tmp = env;
 	while (tmp != NULL)
 	{
-		ft_putendl_fd(tmp->var, 1);
+		ft_putstr_fd(tmp->key, 1);
+		ft_putchar_fd('=', 1);
+		ft_putendl_fd(tmp->value, 1);
 		tmp = tmp->next;
 	}
 	return (0);
