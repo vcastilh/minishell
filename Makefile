@@ -6,13 +6,13 @@
 #    By: guribeir <guribeir@student.42.rio>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/03 19:44:22 by coder             #+#    #+#              #
-#    Updated: 2022/10/13 19:35:23 by vcastilh         ###   ########.fr        #
+#    Updated: 2022/10/19 11:17:07 by vcastilh         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror -g
-SRCS = prompt.c main.c signal.c set_env.c
+SRCS = prompt.c main.c signal.c env.c 
 OBJS = ${SRCS:%.c=$(PATH_OBJS)%.o}	
 LIBS = libft.a
 PATH_SRCS = ./sources/

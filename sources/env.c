@@ -6,7 +6,7 @@
 /*   By: coder <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 14:25:43 by coder             #+#    #+#             */
-/*   Updated: 2022/10/18 22:37:08 by coder            ###   ########.fr       */
+/*   Updated: 2022/10/19 14:49:05 by vcastilh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,15 @@ int	builtin_env(t_list *env)
 		ft_putendl_fd(tmp->var, 1);
 		tmp = tmp->next;
 	}
+	return (0);
+}
+
+int	builtin_export(t_list *env, char *name)
+{
+	t_list	*tmp;
+
+	tmp = env;
+	tmp = ft_lstlast(tmp);
+	ft_lstadd_back(&tmp, ft_lstnew(name));
 	return (0);
 }
