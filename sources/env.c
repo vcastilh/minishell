@@ -6,7 +6,7 @@
 /*   By: guribeir <guribeir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 14:25:43 by coder             #+#    #+#             */
-/*   Updated: 2022/10/21 17:39:21 by guribeir         ###   ########.fr       */
+/*   Updated: 2022/10/21 20:23:21 by guribeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int	builtin_env(t_list *env)
 		tmp = tmp->next;
 	}
 	return (0);
-}
+} 
 
 int	builtin_export(t_list *env, char *name)
 {

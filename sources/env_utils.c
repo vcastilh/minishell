@@ -6,7 +6,7 @@
 /*   By: guribeir <guribeir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 16:29:35 by guribeir          #+#    #+#             */
-/*   Updated: 2022/10/20 20:57:37 by guribeir         ###   ########.fr       */
+/*   Updated: 2022/10/21 20:32:23 by guribeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ t_list	*change_env(t_list *env, char *key, char *value)
 
 	len = ft_strlen(key);
 	tmp = env;
+	if (!key || !value)
+		return (NULL);
 	while(tmp)
 	{
 		if (ft_strncmp(key, tmp->key, len) == 0)
