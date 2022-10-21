@@ -6,7 +6,7 @@
 /*   By: guribeir <guribeir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/23 08:47:36 by vcastilh          #+#    #+#             */
-/*   Updated: 2022/10/21 18:13:05 by coder            ###   ########.fr       */
+/*   Updated: 2022/10/21 17:40:07 by guribeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ char		**ft_split(char const *s, char c);
 char		*ft_get_next_line(int fd);
 long double	ft_atold(const char *nptr);
 char		*ft_getenv(char *name, char **envp);
-t_list		*ft_lstnew(void	*content);
+t_list		*ft_lstenv_new(void	*content);
 //void		ft_lstadd_front(t_list **lst, t_list *new_node);
 //int			ft_lstsize(t_list *lst);
 t_list		*ft_lstlast(t_list *lst);

@@ -6,7 +6,7 @@
 /*   By: guribeir <guribeir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 14:25:43 by coder             #+#    #+#             */
-/*   Updated: 2022/10/20 21:34:40 by guribeir         ###   ########.fr       */
+/*   Updated: 2022/10/21 17:39:21 by guribeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@ t_list	*set_env(char *envp[])
 	t_list	*env;
 	
 	i = 0;
-	env = ft_lstnew(envp[i++]);
+	env = ft_lstenv_new(envp[i++]);
 	while (envp[i] != NULL)
-		ft_lstadd_back(&env, ft_lstnew(envp[i++]));
+		ft_lstadd_back(&env, ft_lstenv_new(envp[i++]));
 	return (env);
 }
 
@@ -45,6 +45,6 @@ int	builtin_export(t_list *env, char *name)
 
 	tmp = env;
 	tmp = ft_lstlast(tmp);
-	ft_lstadd_back(&tmp, ft_lstnew(name));
+	ft_lstadd_back(&tmp, ft_lstenv_new(name));
 	return (0);
 }

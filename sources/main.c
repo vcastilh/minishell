@@ -6,7 +6,7 @@
 /*   By: guribeir <guribeir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 22:13:00 by coder             #+#    #+#             */
-/*   Updated: 2022/10/21 19:21:29 by coder            ###   ########.fr       */
+/*   Updated: 2022/10/21 17:36:55 by guribeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,38 @@ MU_TEST_SUITE(send_string_sexta_expect_string_sexta)
 
 }
 
+MU_TEST_SUITE(send_string_sofrencia_expect_string_sofrencia)
+{
+	//Arrange: variaveis usadas pro teste
+	char	*expected;
+	char	*result;
+
+	//Act: ação do teste
+	
+	expected = ft_strdup("sofrencia");
+	result = set_value("SEXTA=sofrencia");	
+
+	//Assert: comparação do teste
+	mu_assert_string_eq(expected, result);
+
+}
+
+MU_TEST_SUITE(send_string_double_equal_expect_equalsofrencia)
+{
+	//Arrange: variaveis usadas pro teste
+	char	*expected;
+	char	*result;
+
+	//Act: ação do teste
+	
+	expected = ft_strdup("=sofrencia");
+	result = set_value("SEXTA==sofrencia");	
+
+	//Assert: comparação do teste
+	mu_assert_string_eq(expected, result);
+
+}
+
 MU_TEST_SUITE(test_suite)
 {
 	// Tests for set_key()
@@ -77,6 +109,8 @@ MU_TEST_SUITE(test_suite)
 	MU_RUN_TEST(send_string_double_equal_expect_sexta);
 
 	// Tests for set_value()
+	MU_RUN_TEST(send_string_sofrencia_expect_string_sofrencia);
+	MU_RUN_TEST(send_string_double_equal_expect_equalsofrencia);
 }
 
 int main(void)

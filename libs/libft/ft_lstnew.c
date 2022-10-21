@@ -6,7 +6,7 @@
 /*   By: guribeir <guribeir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/15 14:28:57 by coder             #+#    #+#             */
-/*   Updated: 2022/10/20 21:29:30 by guribeir         ###   ########.fr       */
+/*   Updated: 2022/10/21 17:38:35 by guribeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ char	*set_key(char *cont)
 	return(NULL);
 }
 
-char	*set_value(char *cont)
+char *set_value(char *cont)
 {
 	int		i;
 
@@ -40,7 +40,7 @@ char	*set_value(char *cont)
 	return(NULL);
 }
 
-t_list	*ft_lstnew(void *content)
+t_list	*ft_lstenv_new(void *content)
 {
 	t_list	*lst;
 	char	*key;
