@@ -6,7 +6,7 @@
 /*   By: guribeir <guribeir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 14:25:43 by coder             #+#    #+#             */
-/*   Updated: 2022/10/24 19:58:23 by coder            ###   ########.fr       */
+/*   Updated: 2022/10/24 20:40:59 by coder            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,26 +39,12 @@ int	builtin_env(t_list *env)
 	return (0);
 }
 
-int	declare_env(t_list *env)
-{
-	t_list	*tmp;
-
-	tmp = env;
-	while (tmp != NULL)
-	{
-		ft_putstr_fd(tmp->key, 1);
-		ft_putchar_fd('=', 1);
-		ft_putendl_fd(tmp->value, 1);
-		tmp = tmp->next;
-	}
-	return (0);
-}
-
 int	builtin_export(t_list *env, char *name)
 {
 	t_list	*tmp;
 	char	*aux_key;
 
+	// Search for duplicated variable and edit it if so
 	tmp = env;
 	if (ft_strchr(name, '='))
 	{
