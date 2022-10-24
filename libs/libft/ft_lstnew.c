@@ -6,7 +6,7 @@
 /*   By: guribeir <guribeir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/15 14:28:57 by coder             #+#    #+#             */
-/*   Updated: 2022/10/21 17:38:35 by guribeir         ###   ########.fr       */
+/*   Updated: 2022/10/22 00:27:37 by coder            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,16 +43,15 @@ char *set_value(char *cont)
 t_list	*ft_lstenv_new(void *content)
 {
 	t_list	*lst;
-	char	*key;
-	char	*value;
 
 	lst = malloc(sizeof(t_list));
 	if (lst == NULL)
 		return (NULL);
-	key = set_key(content);
-	value = set_value(content);
-	lst->key = key;
+	lst->key = set_key(content);
 	if (lst->key == NULL)
+		return (NULL);
+	lst->value = set_value(content);
+	if (lst->value == NULL)
 		return (NULL);
 	lst->next = NULL;
 	return (lst);
