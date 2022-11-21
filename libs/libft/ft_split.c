@@ -1,16 +1,22 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_split.c                                         :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: vcastilh <vcastilh@student.42sp.org.br>    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/02 20:09:11 by vcastilh          #+#    #+#             */
-/*   Updated: 2021/09/14 08:13:50 by vcastilh         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "libft.h"
+
+static char	*fill_word(char **arr, size_t j, size_t i, char const **s)
+{
+	size_t	k;
+
+	arr[j] = (char *)malloc((i + 1) * sizeof(char));
+	if (!*arr)
+		return (NULL);
+	k = 0;
+	while (i-- > 0 && **s)
+	{
+		arr[j][k] = **s;
+		(*s)++;
+		k++;
+	}
+	arr[j][k] = '\0';
+	return (arr[j]);
+}
 
 static size_t	ft_count_words(char const *s, char c)
 {
@@ -25,11 +31,16 @@ static size_t	ft_count_words(char const *s, char c)
 			i++;
 		else
 		{
-			n++;
-			while (s[i] != c && s[i] != '\0')
+			if (s[i++] == '\'')
 			{
-				i++;
+				n++;
+				while (s[i] != '\'')
+					i++;
 			}
+			else
+				n++;
+			while (s[i] != c && s[i] != '\0')
+				i++;
 		}
 	}
 	return (n);
@@ -47,17 +58,20 @@ static char	**ft_get_words(char const *s, char c, size_t num_words, char **arr)
 		while (*s == c)
 			s++;
 		while (s[i] != c && s[i] != '\0')
-			i++;
-		arr[j] = (char *)malloc((i + 1) * sizeof(char));
-		if (!*arr)
-			return (NULL);
-		i = 0;
-		while (*s != c && *s)
-			arr[j][i++] = *s++;
-		arr[j][i] = '\0';
+		{
+			if (s[i] == '\'')
+			{
+				i++;
+				while (s[i] != '\'')
+					i++;
+				i++;
+			}
+			else
+				i++;
+		}
+		arr[j] = fill_word(arr, j, i, &s);
 		j++;
 	}
-	arr[j] = NULL;
 	return (arr);
 }
 
@@ -71,5 +85,6 @@ char	**ft_split(char const *s, char c)
 	if (!arr)
 		return (NULL);
 	arr = ft_get_words(s, c, num_words, arr);
+	arr[num_words] = NULL;
 	return (arr);
 }
